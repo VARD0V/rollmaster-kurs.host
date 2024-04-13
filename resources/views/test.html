@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rollmaster</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <script defer src="/resources/js/vue.3.4.21.global.js"></script>
+    <script defer src="/resources/js/main.js"></script>
+</head>
+<body id="app">
+    <div class="head">
+        <header>
+            <div>
+                <img src="../../../rollmaster-kurs.ru/public/images/profile.png" alt="exit">
+                <button @click="linkpage('auth')">вход</button>
+            </div>
+            <div><a @click="linkpage('main')" style="cursor: pointer"><img src="../../../rollmaster-kurs.ru/public/images/logo.png" alt="logo"></a></div>
+            <div>
+                <img src="../../../rollmaster-kurs.ru/public/images/cart.png" alt="cart">
+                <button @click="linkpage('cart')">корзина</button>
+            </div>
+        </header>
+        <nav class="navigation">
+            <a>панель админа</a>
+            <a style="cursor: pointer" @click="linkpage('categories')">категории</a>
+        </nav>
+    </div>
+<main>
+    <!--главная-->
+    <section v-if="page === 'main'">
+        <h2 style="color: white">MAIN</h2>
+        <button @click="linkpage('reg')">Регистрация</button>
+    </section>
+
+    <!--страницы связанные с пользователем-->
+    <!--авторизация-->
+    <section v-if="page === 'auth'" style="width: 400px; margin: 50px auto">
+        <h2 style="color: white">Авторизация</h2>
+        <form style="background-color: black; border: yellow solid 2px" class="form-control" @submit.prevent>
+            <input class="form-control m-3 w-50" id="loginAuth" name="login"  type="text" placeholder="Введи логин">
+            <input class="form-control m-3 w-50" id="passwordAuth" name="password"  type="password" placeholder="Введи пароль">
+            <div>
+                <button @click="login">Авторизация</button>
+                <button @click="linkpage('reg')">Регистрация</button>
+            </div>
+        </form>
+    </section>
+
+    <!--регистрация-->
+    <section v-if="page === 'reg'" style="width: 400px; margin: 50px auto">
+        <h2 style="color: white">Регистрация</h2>
+        <form style="background-color: black; border: yellow solid 2px" class="form-control" @submit.prevent>
+            <input class="form-control m-3 w-50" id="name" name="name"  type="text" placeholder="Введи имя">
+            <input class="form-control m-3 w-50" id="login" name="login"  type="text" placeholder="Введи логин">
+            <input class="form-control m-3 w-50" id="password" name="password"  type="password" placeholder="Введи пароль">
+            <input class="form-control m-3 w-50" id="email" name="email"  type="email" placeholder="Введи почту">
+            <input class="form-control m-3 w-50" id="number" name="number"  type="text" placeholder="Введи номер">
+            <div>
+                <button @click="register">Зарегаться</button>
+                <button @click="linkpage('auth')">Авторизация</button>
+            </div>
+        </form>
+    </section>
+
+    <!--страницы связанные с продуктами-->
+    <!--категории-->
+    <section v-if="page === 'categories'" style="width: 400px; margin: 50px auto; text-transform: uppercase; text-align: center">
+        <h2 style="color: white">категория</h2>
+        <div style="display: flex; flex-direction: column; padding-top: 30px; gap: 30px">
+            <a style="cursor: pointer; border: yellow solid 2px; padding: 10px; border-radius: 5px" @click="linkpage('roll')">Роллы</a>
+            <a style="cursor: pointer; border: yellow solid 2px; padding: 10px; border-radius: 5px" @click="linkpage('sushi')">Суши</a>
+        </div>
+    </section>
+
+</main>
+    <!--подвал-->
+    <footer>
+        <div class="description">
+            ROLLMASTER - это выгодные суши в городе Томск. Покупая нашу продукцию, Вы покупаете роллы ресторанного качества по низким ценам. Вы получаете ответ на известный вопрос, чтобы такого вкусного покушать.<br>
+            Вы приобретаете дополнительное время для себя и своей семьи, которое бесценно и безвозвратно. Долой ожоги и страдания на кухне.
+        </div>
+    </footer>
+</body>
+</html>

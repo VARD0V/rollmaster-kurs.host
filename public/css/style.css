@@ -1,0 +1,146 @@
+/* БАЗОВЫЕ--СТИЛИ */
+button{
+    background-color: #FFF500;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .45s all;
+}
+button:hover{
+    background-color: black;
+    color: #FFF500;
+    border: #FFF500 3px solid;
+}
+*{
+    font-family: Roboto, sans-serif;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+a{
+    color: white;
+    text-decoration: none;
+    transition: .45s all;
+}
+a:hover{
+    color: #FFF500;
+}
+/* ШАПКА--САЙТА */
+header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-content: center;
+    align-items: center;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+
+header > div{
+    justify-self: center;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 40px;
+    border: solid 2px #FFF500;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.wrapper{
+    margin: 10px auto;
+}
+
+/* КОНТЕНТ--СТИЛИ */
+
+.content-auth{
+    display: grid;
+    justify-content: center;
+    padding: 20px; /* опционально: устанавливаем внутренние отступы блока */
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину блока */
+    border-radius: 5px; /* опционально: добавляем скругление углов */
+}
+.products{
+    display: flex;
+    flex-wrap: wrap; /* Это позволяет блокам переноситься на следующую строку */
+}
+.product-card{
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    width: 276px; /* Ширина карточки */
+    transition: 0.5s all;
+}
+.product-card:hover{
+    box-shadow: 0 0 20px 0 rgba(255, 255, 0);
+}
+.img-product-card{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-height: auto;
+    height: 170px;
+    margin-bottom: 10px;
+}
+.product-card img {
+    width: 276px;
+    margin: auto 0;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+.product-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.product-text p {
+    margin: 0;
+}
+
+.product-text p:first-child {
+    font-weight: bold;
+}
+
+.product-text p:nth-child(2) {
+    margin: 0 5px;
+}
+.button-buy{
+    background-color: black;
+    width: 100px;
+    border: solid 3px #FFF500;
+    height: 44px;
+    border-radius: 8px;
+    font-weight: bolder;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    transition: .45s all;
+}
+.button-buy:hover{
+    background-color: #FFF500;
+    color: black;
+}
+/* ПОДВАЛ--САЙТА */
+footer{
+    padding: 10px;
+    margin-top: 20px;
+    border: solid 2px #FFF500;
+    color: #FFF500;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*  */
